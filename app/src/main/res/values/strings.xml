@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">RideFast Auto Accept</string>
+
+    <string name="accessibility_service_description">
+        RideFast Auto Accept accessibility service for detecting visible ride offers.
+    </string>
+
+</resources>
