@@ -34,20 +34,9 @@ class MainActivity : Activity() {
         }
 
         val status = TextView(this).apply {
-            text = if (ServiceState.isConnected(this@MainActivity)) {
-                "Service: CONNECTED"
-            } else {
-                "Service: NOT CONNECTED"
-            }
+            text = "Accessibility service diagnostic"
             textSize = 20f
             gravity = Gravity.CENTER
-        }
-
-        val lastEvent = TextView(this).apply {
-            text = "Last event:\n${ServiceState.lastEvent(this@MainActivity)}"
-            textSize = 16f
-            gravity = Gravity.CENTER
-            setPadding(0, 30, 0, 30)
         }
 
         val settingsButton = Button(this).apply {
@@ -74,7 +63,7 @@ class MainActivity : Activity() {
         }
 
         val diagnostic = TextView(this).apply {
-            text = "Diagnostic mode only.\nNo automatic ride acceptance is active yet."
+            text = "Diagnostic mode only.\n\nNo automatic ride acceptance is active yet."
             textSize = 16f
             gravity = Gravity.CENTER
             setPadding(0, 30, 0, 0)
@@ -83,16 +72,10 @@ class MainActivity : Activity() {
         root.addView(title)
         root.addView(subtitle)
         root.addView(status)
-        root.addView(lastEvent)
         root.addView(settingsButton)
         root.addView(infoButton)
         root.addView(diagnostic)
 
         setContentView(root)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        recreate()
     }
 }
